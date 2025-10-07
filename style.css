@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap');
+
+body {
+    background: linear-gradient(135deg, #667eea, #764ba2, #6b8dd6, #8e37d7);
+    background-size: 400% 400%;
+    animation: gradientMove 12s ease infinite;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.apps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+a.rect {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+}
+
+.rect {
+    position: relative;
+    cursor: pointer;
+    height: 280px;
+    width: 300px;
+    background: rgb(223, 223, 223);
+    border-radius: 20px;
+
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.rect::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+    border-radius: 20px 20px 0 0;
+    pointer-events: none;
+}
+
+.rect:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.rect:hover .pic {
+    filter: brightness(1.1);
+}
+
+.rect:hover .info {
+    filter: brightness(1.1);
+}
+
+.rect:active {
+    transform: scale(0.995);
+}
+
+.rect:focus-visible {
+    outline: 3px solid rgba(255, 255, 255, 0.9);
+    outline-offset: 2px;
+}
+
+.pic {
+    height: 70%;
+    border-radius: 20px 20px 0 0;
+    background: rgb(51, 51, 51);
+    transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.pic svg {
+    width: 60%;
+    height: 60%;
+    transition: transform 0.25s ease;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.rect:hover .pic svg {
+    transform: translate(-50%, -50%) scale(1.1)
+}
+
+.pic-youtube {
+    background: rgb(255, 0, 0);
+}
+
+.pic-spotify {
+    background: rgb(29, 185, 84);
+}
+
+.pic-instagram {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+.pic-twitch {
+    background: rgb(145, 70, 255);
+}
+
+.pic-x {
+    background: rgb(0, 0, 0)
+}
+
+.pic-discord {
+    background: rgb(88, 101, 242);
+}
+
+.pic-tiktok {
+    background: black;
+}
+
+.info {
+    height: 30%;
+    border-radius: 0 0 20px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.15),
+                0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.info::before {
+    font-size: 22px;
+    margin-right: 8px;
+    color: white;
+}
+
+
+.info .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.info .title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+}
+
+.info .description {
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.85);
+    letter-spacing: 0.3px;
+}
+
+.info.youtube {
+    background: linear-gradient(180deg, rgb(255, 40, 40), rgb(190, 0, 0));
+}
+
+.info.youtube::before {
+    content: "▶";
+}
+
+.info.spotify {
+    background: linear-gradient(180deg, rgb(29, 185, 84), rgb(18, 131, 58));
+}
+
+.info.spotify::before {
+    content: "♪";
+}
+
+.info.instagram {
+    background: linear-gradient(180deg, rgb(245, 133, 41), rgb(221, 42, 123), rgb(129, 52, 175));
+}
+
+.info.instagram::before {
+    content: "📷";
+}
+
+.info.twitch {
+    background: linear-gradient(180deg, rgb(145, 70, 255), rgb(90, 46, 166));
+}
+
+.info.twitch::before {
+    content: "🎮";
+}
+
+.info.x {
+    background: linear-gradient(180deg, black, rgb(65, 65, 65));
+}
+
+.info.x::before {
+    content: "💬";
+}
+
+.info.discord {
+    background: linear-gradient(180deg, rgb(88, 101, 242), rgb(67, 77, 184));
+}
+
+.info.discord::before {
+    content: "💬";
+}
+
+.info.tiktok {
+    background: linear-gradient(180deg, rgb(0, 0, 0), rgb(238, 29, 82), rgb(37, 244, 238));
+}
+
+.info.tiktok::before {
+    content: "🎵";
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .rect, .info, .pic img { transition: none; }
+}
