@@ -126,6 +126,22 @@ a.rect {
     background: black;
 }
 
+.pic-reddit {
+    background: rgb(255, 69, 0);
+}
+
+.pic-netflix {
+    background: rgb(229, 9, 20);
+}
+
+.pic-whatsapp {
+    background: rgb(37, 211, 102);
+}
+
+.pic-github {
+    background: rgb(24, 23, 23);
+}
+
 .info {
     height: 30%;
     border-radius: 0 0 20px 20px;
@@ -221,6 +237,38 @@ a.rect {
 
 .info.tiktok::before {
     content: "🎵";
+}
+
+.info.reddit {
+    background: linear-gradient(180deg, rgb(255, 69, 0), rgb(204, 55, 0));
+}
+
+.info.reddit::before {
+    content: "🤖";
+}
+
+.info.netflix {
+    background: linear-gradient(180deg, rgb(229, 9, 20), rgb(153, 6, 13));
+}
+
+.info.netflix::before {
+    content: "🎬";
+}
+
+.info.whatsapp {
+    background: linear-gradient(180deg, rgb(37, 211, 102), rgb(28, 128, 77));
+}
+
+.info.whatsapp::before {
+    content: "💬";
+}
+
+.info.github {
+    background: linear-gradient(180deg, rgb(24, 23, 23), rgb(65, 65, 65));
+}
+
+.info.github::before {
+    content: "💻";
 }
 
 @media (prefers-reduced-motion: reduce) {
